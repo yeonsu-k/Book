@@ -20,7 +20,7 @@ console.log(age) // undefinded
 
 ### 18. 참조형 및 원시형 데이터 타입
 
-<span style='bckground-color. #fff5b1'>안녕</span>
+<span style="background-color: #fff5b1">안녕</span>
 
 - ES6
 
