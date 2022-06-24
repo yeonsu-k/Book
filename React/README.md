@@ -1,6 +1,7 @@
 # React
 
 - 강의 : [https://www.udemy.com/course/best-react/](https://www.udemy.com/course/best-react/)
+- 버전 : ES7
 ### Content
 1. [시작하기](https://github.com/yeonsu-k/Book/tree/main/React/Section1%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
 2. [자바스크립트](https://github.com/yeonsu-k/Book/tree/main/React/Section2%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)
