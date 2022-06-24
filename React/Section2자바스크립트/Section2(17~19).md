@@ -1,66 +1,17 @@
 ### 17. 구조분해할당(Destructuring,구조분할)
 
 - Destructuring : 배열의 원소나 객체의 프로퍼티를 추출해서 변수에 저장할 수 있도록 한다.
-- Property : 클래스에 정의한 변수
-- Method : 클래스에정의한 함수
+- [Spread](https://github.com/yeonsu-k/Book/blob/main/React/Section2%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/Section2(14~16).md#16-%EC%8A%A4%ED%94%84%EB%A0%88%EB%93%9C-%EB%B0%8F-%EB%82%98%EB%A8%B8%EC%A7%80-%EC%97%B0%EC%82%B0%EC%9E%90)는 모든 원소와 프로퍼티를 가져와서 새 배열이나 객체 또는 어떤 것에 전달하는 반면 Destructuring은 원소나 프로퍼티를 하나만 가져와서 변수에 저장한다.
 
 ```javascript
-class Person {
-  name = 'Max' 		// Property
-  call =()=>{...}	// Method
-}
-```
-
-- new 키워드로 클래스의 인스턴스를 생성
-
-```javascript
-const myPerson = new Person()
-myPerson.call()
-console.log(myPerson.name)
-```
-
-- 클래스 생성자
-
-```javascript
-class Person{
-  constructor{
-    this.name = 'Max';
-  }
-  printMyName(){
-  	console.log(this.name);
-  }
-}
------
-const person = new Person();
-person.printMyName();			// console에 "Max" 출력됨
-```
-
-- 클래스에서는 상속을 사용 가능
-  - 다른 클래스에 있는 프로퍼티와 메소드를 상속하면 잠재적으로 새로운 프로퍼티와 메소드를 추가한다.
-
-```javascript
-class Human {
-  construnctor(){
-    this.gender = 'male';
-  }
-  printGender() {
-    console.log(this.gender);
-  }
-}
-class Person extends Human {
-  constructor{
-    super();					// 반드시 써줘야 됨.
-    this.name = 'Max';
-    this.gende = 'female';
-  }
-  printMyName(){
-  	console.log(this.name);
-  }
-}
------
-const person = new Person();
-person.printMyName();			// "Max" 출력
-person.printGender();			// "female" 출력
+/* Array Destructuring */
+[a,b] = ['Hello','Max']
+console.log(a) // Hello
+console.log(b) // Max
+/* Object Destructuring */
+{name} = {name:'Max',age:28}
+console.log(name) // Max
+console.log(age) // undefinded
 ```
 
 
@@ -68,6 +19,8 @@ person.printGender();			// "female" 출력
 ------
 
 ### 18. 참조형 및 원시형 데이터 타입
+
+<span style='bckground-color. #fff5b1'>안녕</span>
 
 - ES6
 
