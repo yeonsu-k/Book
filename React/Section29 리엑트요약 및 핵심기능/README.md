@@ -106,7 +106,7 @@ import { useState } from 'react'
 ```
 
 -  리엑트 훅을 사용하기 위해서 함수 시작에 선언한다.
-  - useState를 호출하면 state 리액트가 생성 -> 이 state에 초기값을 줄 수 있음
+  -  useState를 호출하면 state 리액트가 생성 -> 이 state에 초기값을 줄 수 있음
 
 ```react
 import {useState} from 'react';
@@ -131,5 +131,128 @@ export default Todo;
 const [modalIsOpen, setModalIsOpen ] = useState(false);
 ```
 
+---
 
+### 474. 라우팅 추가하기
+
+- 라우팅 : 라우터에서 URL의 변화를 감지하고 URL에 기초하여 화면에보이는 내용을 변경해 줍니다.
+- SPA(싱글 페이지 어플리케이션) : 한 페이지에 여러페이지를 이동하는 것처럼 보여지게 만듬
+  - 클라이언트 측 자바스립트가 모든 걸 제어하기 때문에 새로운 페이지가 로딩될 때까지 기다리지 않아도됨
+
+```react
+// index.js
+import { BrowserRouter } from 'react-router-dom';
+...
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
+```
+
+- react-router-dom이 버전 6으로 업그레이드 되면서, Switch를 지원 안하게 됨.
+  - 6버전 이전
+
+  ```react
+  // App.js
+  import { Route, Switch } from "react-router-dom";
+
+  import AllMeetupsPage from "./pages/AllMeetup";
+  import NewMeetupPage from "./pages/NewMeetup";
+  import FavoritesPage from "./pages/Favorites";
+
+  function App() {
+    return (
+      <div>
+        <Switch>
+          <Route path="/" exact> {/*시작페이지*/}
+            <AllMeetupsPage />
+          </Route>
+          <Route path="/new-meetup">
+            <NewMeetupPage />
+          </Route>
+          <Route path="/favorites">
+            <FavoritesPage />
+          </Route>
+        </Switch>
+      </div>
+    );
+  }
+
+  export default App;
+  ```
+
+
+  - 6버전 이후
+    - Switch => Routes	
+    - component => element
+
+  ```react
+  import { Route, Routes } from "react-router-dom";
+
+  import AllMeetupsPage from "./pages/AllMeetup";
+  import NewMeetupPage from "./pages/NewMeetup";
+  import FavoritesPage from "./pages/Favorites";
+
+  function App() {
+    return (
+      <div>
+        <Routes>
+          <Route path="/" element={ <AllMeetupsPage />} exact />{/*시작페이지*/}
+          <Route path="/new-meetup" element={<NewMeetupPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+        </Routes>
+      </div>
+    );
+  }
+
+  export default App;
+  ```
+
+---
+
+### 475. 링크 및 탐색 추가하기(네비게이션 만들기)
+
+- <Link>태그 : 불필요한 서버 요청을 하는 <a>태그 대신 사용 
+
+- > <Link>태그는 <a>태그를 렌더링 하지만 내부적으로는 'react-router-dom'이 <a>태그에 클릭 리스너를 추가한다. 클릭하면 브라우저가 서버로 request하는 것을 방지하고 옮겨 가려는 경로의 URL을 해석해서 브라우저의 URL 창을 변경합니다.
+
+  ```react
+  <Link>Some Link</Link>
+  ```
+
+---
+
+### 477. 데이터 목록 출력하기 
+
+- 한 배열을 다른 데이터의 배열로 변환하는 방법
+- .map((meetup)=>{})  :  배열 내장 함수로 배열안에 있는 값을 끄집어 냄
+
+```react
+const DUMMY_DATA = [
+  {
+    id: "m1",
+    title: "This is a first meetup",
+	...
+  },
+  ...
+];
+
+function AllMeetupsPage() {
+  return (
+    <section>
+      <h1>All Meetups</h1>
+      <ul>{DUMMY_DATA.map((meetup) => {
+        return <li key={meetup.id}>{meetup.title}</li>
+      })}</ul>
+    </section>
+  );
+}
+export default AllMeetupsPage;
+
+```
+
+---
 
