@@ -257,3 +257,153 @@ export default AllMeetupsPage;
 
 ---
 
+### 479. props.children을 사용하여 wrapper컴포넌트 만들기
+
+- props.children : 모든 컴포넌트가 기본적으로 받아들이는 prop
+
+```react
+import classes from "./Card.module.css";
+
+function Card(props) {
+  return <div className={classes.card}>
+    {props.children}
+  </div>
+}
+
+export default Card;
+```
+
+---
+
+### 481. 사용자 입력 받기 및 양식 제출 처리하기 
+
+\# **submit**  # **form 내용 읽어오기**  # **폼 제출하기**  # **submission 처리하기**
+
+- event.preventDefault() : 브라우저의 기본 동작을 차단하기 위해 호출
+  - 아래 코드에서는 form 전송시 페이지를 리로딩 하지 않고 내부적으로 보내기 위해 코드 사용.
+
+```react
+function NewMeetupForm() {
+  function submitHandler(event) {
+    event.preventDefault();
+  }
+
+  return (
+    <Card>
+      <form className={classes.form} onSubmit={submitHandler}>
+        ...
+      </form>
+    </Card>
+  );
+}
+
+export default NewMeetupForm;
+```
+
+- form 내용 읽어오기 - 2가지
+
+  - useState 사용 :  모든 input태그에 onChange 이벤트 리스너를 추가해서 키를 누를 때마다 함수를 트리거 한다. 그렇게 해서 사용자가 event 객체를 통해 해당 이벤트에 대해 입력한 값을 받아온다. 그리고 그 값을 state를 업데이트 한다. 이렇게 하면 사용자가 키를 누를 때마다 값을 읽을 수 있다.(submit을 누를때뿐만 아닌 input태그에 입력할 때마다 값을 읽어들일 수 있음)
+  - ref (reference의 준말) : 리액트는 DOM element로 reference를 설정할 수 있게 해준다.  이를 통해 DOM element에 직접적으로 엑세스가 가능하다. refrence나 connection을 설정하려면 useRef 훅을 리액트로 부터 import 해야 한다. 하나 이상의 컴포넌트에 하나 이상의 ref를 가질 수 있다.
+
+  ```react
+  import { useRef } from "react";
+
+  import Card from "../ui/Card";
+  import classes from "./NewMeetupForm.module.css";
+
+  function NewMeetupForm() {
+    const titleInputRef = useRef();
+
+    function submitHandler(event) {
+      event.preventDefault();
+
+      const enteredTitle = titleInputRef.current.value; //titleInputRef 연결된 값을 가져옴
+      ...
+    }
+
+    return (
+      <Card>
+        <form className={classes.form} onSubmit={submitHandler}>
+          <div className={classes.control}>
+            <label htmlFor="title">Meetup Title</label>
+            <input type="text" required id="title" ref={titleInputRef} />
+          </div>
+  		...
+          ...
+          <div className={classes.actions}>
+            <button>Add Meetup</button>
+          </div>
+        </form>
+      </Card>
+    );
+  }
+
+  export default NewMeetupForm;
+  ```
+
+---
+
+### 482. Http용 앱 준비하기
+
+\# **firebase 사용**  # **DB**
+
+---
+
+### 483. POST 요청보내기
+
+\# **Reaquest 보내기**  # **POST**
+
+- fetch(인자1,인자2) : HTTP request를 보낸다.
+  - 첫 번째 전달 인자 : request 보낼 URL
+  - 두 번째 전달 인자 : 객체로서 fetch함수 호출과 HTTP request를 설정
+
+```react
+import NewMeetupForm from "../components/meetups/NewMeetupForm";
+
+function NewMeetupPage() {
+  function addMeetupHandler(meetupData) {
+    fetch("https://react-getting-started-44b07-default-rtdb.firebaseio.com/meetups.json", {
+      method: 'POST',
+      body: JSON.stringify(meetupData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    );
+  }
+
+  return (
+    <section>
+      <h1>Add New Meetup</h1>
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
+    </section>
+  );
+}
+export default NewMeetupPage;
+```
+
+---
+
+### 484. 프로그래밍 방식으로 탐색하기
+
+- 브라우저 특정 주소로 데이터와함께 이동하기 : 브라우저의 검색 기록을 조작함 - 예를 들어 메뉴이동하는 메소드같은걸 보여줌
+  - 버전 6 이전 : useHistory
+
+  ```react
+  import { useHistory } from "react-router-dom";
+
+  const history = useHistory(); 
+  history.replace('/'); // replace()는 이전 페이지로 돌아가는 '뒤로가기'버튼을 비활성화
+  ```
+
+  - 버전 6 이상 : useNavigate
+
+  ```react
+  import { useNavigate } from "react-router-dom";
+
+  const history = useNavigate(); 
+  history.replace('/'); // replace()는 이전 페이지로 돌아가는 '뒤로가기'버튼을 비활성화
+  ```
+
+---
+
