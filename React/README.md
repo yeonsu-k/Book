@@ -31,5 +31,5 @@
 26. 리액트 앱 테스트(단위  테스트)
 27. 리액트 + TypeScript
 28. 선택 : 리액트 훅 소개
-29. 선택 : 리액트 요약 및 핵심 기능 둘러보기
+29. [선택 : 리액트 요약 및 핵심 기능 둘러보기](https://github.com/yeonsu-k/Book/tree/main/React/Section29%20%EB%A6%AC%EC%97%91%ED%8A%B8%EC%9A%94%EC%95%BD%20%EB%B0%8F%20%ED%95%B5%EC%8B%AC%EA%B8%B0%EB%8A%A5)
 30. 강의 마무리
