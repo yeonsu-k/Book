@@ -217,11 +217,12 @@ ReactDOM.render(
 
 - <Link>태그 : 불필요한 서버 요청을 하는 <a>태그 대신 사용 
 
-- > <Link>태그는 <a>태그를 렌더링 하지만 내부적으로는 'react-router-dom'이 <a>태그에 클릭 리스너를 추가한다. 클릭하면 브라우저가 서버로 request하는 것을 방지하고 옮겨 가려는 경로의 URL을 해석해서 브라우저의 URL 창을 변경합니다.
+  > <Link>태그는 <a>태그를 렌더링 하지만 내부적으로는 'react-router-dom'이 <a>태그에 클릭 리스너를 추가한다. 클릭하면 브라우저가 서버로 request하는 것을 방지하고 옮겨 가려는 경로의 URL을 해석해서 브라우저의 URL 창을 변경합니다.
 
   ```react
   <Link>Some Link</Link>
   ```
+
 
 ---
 
