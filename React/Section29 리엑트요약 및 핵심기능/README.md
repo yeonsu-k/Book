@@ -106,7 +106,7 @@ import { useState } from 'react'
 ```
 
 -  리엑트 훅을 사용하기 위해서 함수 시작에 선언한다.
-  -  useState를 호출하면 state 리액트가 생성 -> 이 state에 초기값을 줄 수 있음
+  -  useState를 호출하면 state 리액트가 생성 => 이 state에 초기값을 줄 수 있음
 
 ```react
 import {useState} from 'react';
@@ -406,4 +406,27 @@ export default NewMeetupPage;
   ```
 
 ---
+
+### 486. useEffect() 훅 사용하기
+
+- useEffect(함수, 배열) :  useState를 사용하면서 코드가 반복적으로 실행될 수 있는데 useEffect()를 사용하면 반복하던 코드를 실행되는 것을 제한하고 실행 조건을 설정할 수 있다. 
+
+  - 첫번째 인자(함수) : 반복적으로 실행되던 코드를 넣음
+  - 두번째 인자(배열) : 함수를 마지막으로 실행했을 때의 값과 비교
+
+  > useEfeect는 의존성이 있어 처음으로 렌더링 되고 실행될 때만 이 함수를 실행한다. 배열이 비어있을경우([]) 이후 실행부터는 의존성이 없기 때문에 effect 함수가 실행되지 않는다. 외부 의존성을 가지게 된다면 배열안에 쓰면된다. ex) [props]
+
+```react
+import { useState, useEffect } from 'react';
+```
+
+---
+
+### 489. 컴포넌트에서 컨텍스트 사용하기
+
+- useContext 훅 : 컴포넌트와 context를 연결해주는 역할
+
+```react
+import { useContext } from "react";
+```
 
