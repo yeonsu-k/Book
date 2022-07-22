@@ -2,7 +2,8 @@
 
 - 강의 : [https://www.udemy.com/course/best-react/](https://www.udemy.com/course/best-react/)
 - 버전 : ES7
-### Content
+  
+  ### Content
 1. [시작하기](https://github.com/yeonsu-k/Book/tree/main/React/Section1%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
 2. [자바스크립트](https://github.com/yeonsu-k/Book/tree/main/React/Section2%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)
 3. 리액트 기초 및 실습 컴포넌트
@@ -29,7 +30,7 @@
 24. 리액트 앱 애니메이션 만들기
 25. 리덕스를 리액트 훅으로 바꾸기
 26. 리액트 앱 테스트(단위  테스트)
-27. 리액트 + TypeScript
+27. [리액트 + TypeScript]([Book/React/Section27 리액트+TypeScript at main · yeonsu-k/Book · GitHub](https://github.com/yeonsu-k/Book/tree/main/React/Section27%20%EB%A6%AC%EC%95%A1%ED%8A%B8%2BTypeScript))
 28. 선택 : 리액트 훅 소개
 29. [선택 : 리액트 요약 및 핵심 기능 둘러보기](https://github.com/yeonsu-k/Book/tree/main/React/Section29%20%EB%A6%AC%EC%97%91%ED%8A%B8%EC%9A%94%EC%95%BD%20%EB%B0%8F%20%ED%95%B5%EC%8B%AC%EA%B8%B0%EB%8A%A5)
 30. 강의 마무리
