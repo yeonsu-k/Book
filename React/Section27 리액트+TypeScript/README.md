@@ -1,18 +1,18 @@
 ### 392. 타입스크립트 왜 사용할까
 
 - 타입스크립트는 자바스크립트의 "슈퍼셋(superset)" 언어이다.
-  
+
   - 자바스크립트를 기반으로 더 확장된 프로그래밍 언어
-  
+
   - 장적 타입의 특징을 갖는다.
-  
+
   - 브라우저에서는 타입스크립트가 실행되지 않으므로 타입스크립트를 자바스크립트 형태로 컴파일 한다.
-  
+
   ```typescript
   function add(a:number, b: number){
       return a + b;
   }
-  
+
   const result = add('2','5'); // 타입 error 발생
   ```
 
@@ -153,3 +153,61 @@ const stringArray = insertAtBeginning(['a','b','c'],'d');
 ```
 
 ---
+
+#### 403. 리액트+TypeScript 프로젝트 만들기
+
+- TypeScript기반 프로젝트 생성하기
+
+```
+npx create-react-app my-app --template typescript
+```
+
+```
+yarn create react-app my-app --template typescript
+```
+
+- 프로젝트에 TypeScript 추가하기
+
+```
+npm install --save-dev typescript
+```
+
+```
+yarn add --dev typescript
+```
+
+- TypeScript를 설치하면 `tsc` 명령어에 접근할 수 있습니다. 설정을 하기 전에 `package.json`파일`"script"`부분에 `"tsc"`를 추가
+
+```
+{
+  // ...
+  "scripts": {
+    "build": "tsc",
+    // ...
+  },
+  // ...
+}
+```
+
+- TypeScript 컴파일러 설정하기
+
+```
+npx tsc --init
+```
+
+```
+yarn run tsc --init
+```
+
+- TypeScript 실행하기
+
+```
+npm run build
+```
+
+```
+yarn build
+```
+
+---
+
