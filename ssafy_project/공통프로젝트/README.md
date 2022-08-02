@@ -4,7 +4,7 @@
 
 1. 색상을 뽑는다
 
-![Untitled](C:\Users\multicampus\Desktop\공통프로젝트\프로젝트사용컬러표.png)
+![프로젝트사용컬러표](https://user-images.githubusercontent.com/83412032/182373666-62e83c4c-27af-466c-8814-1df31cd39937.png)
 
 2. 파일에 뽑은 컬러를 파일에 ‘이름:컬러’ 형식으로 저장한다.
 
@@ -95,7 +95,7 @@ export const palette = {
   
   - 저장했던 컬러들이 목록으로 보여진다.
   
-  <img src="file:///C:/Users/multicampus/Desktop/공통프로젝트/목록.png" title="" alt="Untitled" width="320">
+![목록](https://user-images.githubusercontent.com/83412032/182373705-4f7ae41b-f127-467f-9068-aa47c5a3b85d.png)
 
 ### ✏ css 상속하기
 
